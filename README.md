@@ -1,47 +1,98 @@
-# 🖥️ HỆ THỐNG QUẢN LÝ CỬA HÀNG MÁY TÍNH
+# 💻 Hệ Thống Quản Lý Cửa Hàng Máy Tính
 
-Đây là project nhóm môn học Lập trình .NET sử dụng **WinForms**, **ADO.NET**, **SQL Server** và **Bunifu UI** để xây dựng hệ thống quản lý cửa hàng máy tính với giao diện thân thiện và đầy đủ tính năng thực tế.
-
----
-
-## 📌 TÍNH NĂNG CHÍNH
-
-- Quản lý sản phẩm, loại sản phẩm, nhà sản xuất
-- Quản lý nhân viên, khách hàng
-- Quản lý nhà cung cấp, đơn đặt hàng, phiếu nhập và phiếu xuất
-- Thống kê doanh thu, đơn hàng, tồn kho
-- Phân quyền tài khoản và đăng nhập hệ thống
-- Báo cáo bằng **RDLC + DataSet (.xsd)**
+Dự án được xây dựng trong khuôn khổ môn học _Lập trình .NET_ nhằm phát triển một hệ thống quản lý cửa hàng máy tính chuyên nghiệp với giao diện WinForms, sử dụng kiến trúc 3 lớp, kết nối CSDL SQL Server và tích hợp thư viện giao diện Bunifu hiện đại.
 
 ---
 
-## 🧱 CÔNG NGHỆ SỬ DỤNG
+## 🧰 Công Nghệ Sử Dụng
 
-- 💻 Ngôn ngữ: **C#**
-- 🖼️ Giao diện: **WinForms + Bunifu.UI.WinForms.dll**
-- 🗃️ Cơ sở dữ liệu: **SQL Server**
-- 🔌 Kết nối CSDL: **ADO.NET**
-- 📊 Báo cáo: **RDLC + DataSet**
-- 🏗️ Kiến trúc: **3 lớp** (`GUI` – `BLL` – `DAL` – `DTO`)
-
----
-
-## 👥 PHÂN CÔNG THÀNH VIÊN
-
-| Họ tên       | Tài khoản GitHub | Chức năng đảm nhận                    |
-| ------------ | ---------------- | ------------------------------------- |
-| Hoàng Sơn    | `hwangseonit`    | Giao diện chính, thống kê tổng hợp    |
-| Thành viên 2 | `username2`      | Phiếu xuất, đơn đặt hàng              |
-| Thành viên 3 | `username3`      | Phiếu nhập, nhà cung cấp              |
-| Thành viên 4 | `username4`      | Quản lý nhân sự, khách hàng           |
-| Thành viên 5 | `username5`      | Sản phẩm, loại sản phẩm, nhà sản xuất |
+- 🖥️ **Ngôn ngữ:** C# (.NET Framework)
+- 🗃️ **Cơ sở dữ liệu:** SQL Server
+- 🔌 **Kết nối CSDL:** ADO.NET
+- 🧱 **Kiến trúc phần mềm:** 3 lớp (`GUI` – `DTO` – `BLL` – `DAL`)
+- 🎨 **Giao diện:** WinForms + Bunifu.UI.WinForms.dll
+- 📊 **Báo cáo:** RDLC + DataSet (.xsd)
+- 🔧 **IDE:** Visual Studio 2022
 
 ---
 
-## 🚀 CÁCH CHẠY PROJECT
+## 🎯 Các Chức Năng Chính
 
-1. Clone project về máy:
+- Quản lý nhân viên, khách hàng, nhà cung cấp, nhà sản xuất
+- Quản lý sản phẩm, loại sản phẩm
+- Quản lý đơn đặt hàng, phiếu nhập, phiếu xuất
+- Quản lý tài khoản, phân quyền đăng nhập
+- Báo cáo – thống kê hoạt động bán hàng và kho
+- Giao diện dễ sử dụng, trực quan, thân thiện với người dùng
+
+---
+
+## 👥 Thành Viên Nhóm
+
+| Họ Tên              | GitHub        | Phụ Trách                                     |
+| ------------------- | ------------- | --------------------------------------------- |
+| Trần Văn Sơn        | `hwangseonit` | Giao diện chính, thống kê tổng hợp            |
+| Nguyễn Đức Trí      | `Carousel666` | Phiếu xuất, đơn đặt hàng, thống kê phiếu xuất |
+| Trần Minh Chiến     | `sharkg79`    | Phiếu nhập, nhà cung cấp, thống kê phiếu nhập |
+| Đỗ Minh Quang       | `Dwangnt`     | Quản lý nhân sự, khách hàng, đăng nhập        |
+| Nguyễn Sỹ Quang Huy | `Quanghuy299` | Sản phẩm, loại sản phẩm, nhà sản xuất         |
+
+---
+
+## 🚀 Hướng Dẫn Chạy Project
+
+### 📥 1. Tải source code về
 
 ```bash
 git clone https://github.com/hwangseonit/Project-Group-12.git
 ```
+
+### 📂 2. Mở Project bằng Visual Studio
+
+- Mở file `QuanLyCuaHangMayTinh.sln` bằng **Visual Studio 2022**
+- Đảm bảo **đã cài .NET Framework 4.7.2 trở lên**
+
+### 🔌 3. Kết nối cơ sở dữ liệu
+
+- Khởi tạo SQL Server và database `QL_CuaHangMayTinh`
+- Update chuỗi kết nối trong `App.config` hoặc trong `DAL/Database.cs`
+
+```xml
+<connectionStrings>
+  <add name="cnstr" connectionString="Data Source=.;Initial Catalog=QL_CuaHangMayTinh;Integrated Security=True"/>
+</connectionStrings>
+```
+
+### 📦 4. Khôi phục thư viện ngoài (Bunifu)
+
+- Thêm `Bunifu.UI.WinForms.dll` vào Project:
+
+  - Chuột phải `References` → `Add Reference` → `Browse` → Chọn `Bunifu.UI.WinForms.dll`
+
+- Đảm bảo bạn đã cài:
+  - `Microsoft.SqlServer.Types` (qua NuGet hoặc thủ công)
+  - RDLC support nếu cần xem báo cáo (`ReportViewer`)
+
+### ▶️ 5. Build & Run
+
+- Nhấn `Ctrl + F5` hoặc `Start` để chạy chương trình
+- Đăng nhập bằng tài khoản mặc định (nếu có sẵn trong DB)
+
+---
+
+## 📌 Ghi Chú
+
+- Bạn cần SQL Server cài sẵn + có quyền tạo DB
+- Báo cáo RDLC hoạt động khi có dữ liệu mẫu trong bảng
+- File `.gitignore` đã loại trừ `bin/`, `obj/`, `.vs/`, `packages/`...
+
+---
+
+## 📬 Liên Hệ
+
+- 📧 Email nhóm trưởng: **hoangsonvq1@gmail.com**
+- 📍 Repo chính: [github.com/hwangseonit/Project-Group-12](https://github.com/hwangseonit/Project-Group-12)
+
+---
+
+> © 2024 - Project Nhóm Lập trình .NET - WinForms + SQL Server
